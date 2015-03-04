@@ -28,4 +28,6 @@
                        theme:(JTSActionSheetTheme *)theme
                     position:(JTSActionSheetItemViewPosition)position;
 
+- (void)setEnabled:(BOOL)enabled;
+
 @end

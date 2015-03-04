@@ -10,6 +10,7 @@
 
 #define JTSActionSheetDefaultActionColor [UIColor colorWithRed:0.09 green:0.50 blue:0.99 alpha:1.0]
 #define JTSActionSheetDefaultDestructionColor [UIColor colorWithRed:0.99 green:0.24 blue:0.22 alpha:1.0]
+#define JTSActionSheetDefaultDisabledColor [UIColor colorWithWhite:0.5 alpha:1.0]
 #define JTSActionSheetDefaultTitleColor [UIColor colorWithWhite:0.5 alpha:1.0]
 #define JTSActionSheetDefaultBackgroundColor [UIColor colorWithWhite:0.99 alpha:0.96]
 #define JTSActionSheetDefaultBackdropShadowColor [UIColor colorWithWhite:0.0 alpha:0.4]
@@ -31,6 +32,7 @@
     
     theme.normalButtonColor = JTSActionSheetDefaultActionColor;
     theme.destructiveButtonColor = JTSActionSheetDefaultDestructionColor;
+    theme.disabledButtonColor = JTSActionSheetDefaultDisabledColor;
     theme.titleColor = JTSActionSheetDefaultTitleColor;
     theme.backdropShadowColor = JTSActionSheetDefaultBackdropShadowColor;
     theme.backgroundColor = JTSActionSheetDefaultBackgroundColor;

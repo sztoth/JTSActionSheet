@@ -15,6 +15,7 @@ typedef void(^JTSActionBlock)(void);
 @property (copy, nonatomic, readonly) NSString *title;
 @property (copy, nonatomic, readonly) JTSActionBlock actionBlock;
 @property (assign, nonatomic, readonly) BOOL destructive;
+@property (assign, nonatomic) BOOL enabled;
 
 + (instancetype)itemWithTitle:(NSString *)title
                        action:(JTSActionBlock)actionBlock

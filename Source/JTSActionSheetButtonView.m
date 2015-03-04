@@ -112,6 +112,17 @@
     return self;
 }
 
+- (void)setEnabled:(BOOL)enabled
+{
+    [self.button setEnabled:enabled];
+    if (enabled) {
+        [self.button setTitleColor:self.theme.normalButtonColor forState:UIControlStateNormal];
+    }
+    else {
+        [self.button setTitleColor:self.theme.disabledButtonColor forState:UIControlStateNormal];
+    }
+}
+
 #pragma mark - JTSActionSheetItemView
 
 - (CGFloat)intrinsicHeightGivenAvailableWidth:(CGFloat)availableWidth {

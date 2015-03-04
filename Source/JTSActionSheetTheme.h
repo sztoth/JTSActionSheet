@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, JTSActionSheetStyle) {
 @property (strong, nonatomic) UIColor *titleColor;
 @property (strong, nonatomic) UIColor *normalButtonColor;
 @property (strong, nonatomic) UIColor *destructiveButtonColor;
+@property (strong, nonatomic) UIColor *disabledButtonColor;
 
 @property (assign, nonatomic) CGFloat titleBaselineOffset;
 @property (assign, nonatomic) CGFloat normalButtonBaselineOffset;
