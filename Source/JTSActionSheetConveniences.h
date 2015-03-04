@@ -17,7 +17,7 @@ static inline JTSActionSheetItem * JTSActionSheetDefaultCancelItem(NSString *alt
     } else {
         title = @"Cancel";
     }
-    return [JTSActionSheetItem itemWithTitle:title action:nil isDestructive:NO];
+    return [JTSActionSheetItem itemWithTitle:title action:nil isDestructive:NO isEnabled:YES];
 }
 
 extern CGFloat const JTSActionSheetMargin;

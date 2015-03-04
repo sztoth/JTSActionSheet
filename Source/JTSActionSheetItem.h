@@ -19,6 +19,7 @@ typedef void(^JTSActionBlock)(void);
 
 + (instancetype)itemWithTitle:(NSString *)title
                        action:(JTSActionBlock)actionBlock
-                isDestructive:(BOOL)isDestructive;
+                isDestructive:(BOOL)isDestructive
+	            isEnabled:(BOOL)isEnabled;
 
 @end

@@ -20,13 +20,14 @@
 
 + (instancetype)itemWithTitle:(NSString *)title
                        action:(JTSActionBlock)actionBlock
-                isDestructive:(BOOL)isDestructive {
+                isDestructive:(BOOL)isDestructive
+  		    isEnabled:(BOOL)isEnabled {
     
     JTSActionSheetItem *item = [[JTSActionSheetItem alloc] init];
     item.title = title;
     item.actionBlock = actionBlock;
     item.destructive = isDestructive;
-    item.enabled = YES;    
+    item.enabled = isEnabled;
 
     return item;
 }
