@@ -25,4 +25,6 @@
 
 - (void)showInView:(UIView *)view;
 
+ - (void)setTitle:(NSString *)title;
+
 @end

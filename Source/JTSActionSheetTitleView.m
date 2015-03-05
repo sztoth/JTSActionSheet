@@ -29,32 +29,41 @@
     
     self = [super initWithTheme:theme position:position];
     if (self) {
-        
-        _title = title.copy;
-        
+
         self.accessibilityTraits = UIAccessibilityTraitStaticText | UIAccessibilityTraitHeader;
-        
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectInset(self.bounds, JTSActionSheetMargin * 2.0, JTSActionSheetMargin * 2.0)];
-        self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        self.titleLabel.backgroundColor = [UIColor clearColor];
-        self.titleLabel.numberOfLines = 24;
-        self.titleLabel.isAccessibilityElement = NO;
         self.isAccessibilityElement = YES;
-        
-        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-        paragraphStyle.alignment = NSTextAlignmentCenter;
-        NSDictionary *attributes = @{NSFontAttributeName : theme.titleFont,
-                                     NSForegroundColorAttributeName : theme.titleColor,
-                                     NSParagraphStyleAttributeName : paragraphStyle,
-                                     NSBaselineOffsetAttributeName : @(theme.titleBaselineOffset)
-                                     };
-        self.attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
-        self.titleLabel.attributedText = self.attributedTitle;
-        
+        [self setTitle:title]; 
         [self addSubview:self.titleLabel];
     }
     return self;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    _title = title.copy;
+
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    NSDictionary *attributes = @{NSFontAttributeName : self.theme.titleFont,
+                                 NSForegroundColorAttributeName : self.theme.titleColor,
+                                 NSParagraphStyleAttributeName : paragraphStyle,
+                                 NSBaselineOffsetAttributeName : @(self.theme.titleBaselineOffset)
+                                 };
+    self.attributedTitle = [[NSAttributedString alloc] initWithString:self.title attributes:attributes];
+    self.titleLabel.attributedText = self.attributedTitle;
+}
+
+- (UILabel *)titleLabel
+{
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectInset(self.bounds, JTSActionSheetMargin * 2.0, JTSActionSheetMargin * 2.0)];
+        _titleLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.numberOfLines = 24;
+        _titleLabel.isAccessibilityElement = NO;
+    }
+    return _titleLabel;
 }
 
 #pragma mark - Accessibility

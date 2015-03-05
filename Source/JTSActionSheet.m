@@ -93,6 +93,11 @@
     [[JTSActionSheetPresenter sharedInstance] presentSheet:self fromView:view];
 }
 
+- (void)setTitle:(NSString *)title
+{
+    [self.titleView setTitle:title];
+}
+
 #pragma mark - UIView
 
 - (void)layoutSubviews {
