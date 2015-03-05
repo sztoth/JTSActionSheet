@@ -27,4 +27,6 @@
 
 - (void)setEnabled:(BOOL)enabled tobuttonAtIndex:(NSInteger)index;
 
+ - (void)setTitle:(NSString *)title;
+
 @end

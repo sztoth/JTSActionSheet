@@ -14,4 +14,6 @@
                         theme:(JTSActionSheetTheme *)theme
                      position:(JTSActionSheetItemViewPosition)position;
 
+- (void)setTitle:(NSString *)title;
+
 @end
