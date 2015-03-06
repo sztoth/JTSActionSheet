@@ -25,6 +25,6 @@
 
 - (void)showInView:(UIView *)view;
 
-- (void)setEnabled:(BOOL)enabled tobuttonAtIndex:(NSInteger)index;
+- (void)setEnabled:(BOOL)enabled buttonAtIndex:(NSInteger)index;
 
 @end
