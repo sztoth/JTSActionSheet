@@ -89,7 +89,7 @@
     return self;
 }
 
-- (void)setEnabled:(BOOL)enabled tobuttonAtIndex:(NSInteger)index
+- (void)setEnabled:(BOOL)enabled buttonAtIndex:(NSInteger)index
 {
     JTSActionSheetButtonView *button = [self.actionButtons objectAtIndex:index];
     [button setEnabled:enabled];
